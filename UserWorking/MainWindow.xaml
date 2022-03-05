@@ -19,10 +19,19 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Label Grid.Row="0" Content="{Binding Path=UserName}" VerticalContentAlignment="Center" FontSize="18" />
-        <DataGrid ItemsSource="{Binding UserActions}" Grid.Row="1">
+        <DataGrid ItemsSource="{Binding UserActions}" 
+                  Grid.Row="1" 
+                  AutoGenerateColumns="False"
+                  >
             <DataGrid.Columns>
-                <DataGridTextColumn Header="ActionId" Binding="{Binding Path=ActionId}"/>
-                <DataGridTextColumn Header="ActionName" Binding="{Binding Path=ActionName}"/>
+                <DataGridTextColumn Header="ActionId" Binding="{Binding Path=ActionId}" Width="90"/>
+                <DataGridTextColumn Header="ActionName" Binding="{Binding Path=ActionName}"  Width="150"/>
+                <DataGridTextColumn Header="ActionDescription" Binding="{Binding Path=ActionDescription}" Width="180"/>
+                <DataGridTextColumn Header="ElementId" Binding="{Binding Path=ElementId}" Width="80"/>
+                <DataGridTextColumn Header="FilePath" Binding="{Binding Path=FilePath}" Width="320"/>
+                <DataGridTextColumn Header="FileName" Binding="{Binding Path=FileName}" Width="80"/>
+                <DataGridTextColumn Header="ActionTime" Binding="{Binding Path=ActionTime}"/>
+                <DataGridTextColumn Header="ActionTime" Binding="{Binding Path=ActionRUTime}"/>
                 <DataGridTextColumn Header="ActionDate" Binding="{Binding Path=ActionDate}"/>
             </DataGrid.Columns>
         </DataGrid>
